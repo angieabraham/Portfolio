@@ -1,0 +1,23 @@
+.main {
+    text-align: center;
+}
+.information{
+    color: #785964;
+    background-color: #f0efeb00;
+    border: 5px solid #454545;
+    border-radius: 15px;
+    width: 500px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+body {
+    background-color: #f1fffa;
+}
+
+img {
+    width: 280px;
+    height: 200px;
+    margin: 20px;
+}
+
