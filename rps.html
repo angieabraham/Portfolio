@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+    <h1>Press "r", "p", or "s" to play!</h1>
+
+    <script type='text/javascript'>
+        document.addEventListener('keyup', determineWin, false);
+        var playerWins = 0
+        var playerLosses = 0
+        var playerTies = 0
+        function showWinsTiesLosses() {
+            alert('Wins: ' + playerWins + '\nTies: ' + playerTies + '\nLosses: ' + playerLosses)
+        }
+        function determineWin(event) {
+            var choices = ['r', 'p', 's'];
+            var keyPressed = event.key.toLowerCase();
+            computerChoice = choices[Math.floor(Math.random() * choices.length)]
+            if (computerChoice == 'r') {
+                if (keyPressed == 's') {
+                    alert('You played ' + keyPressed + ' and the computer played ' + computerChoice + " so you lost.")
+                    playerLosses += 1
+                    showWinsTiesLosses()
+                }
+                else if (keyPressed == 'p') {
+                    alert('You played ' + keyPressed + ' and the computer played ' + computerChoice + " so you won!")
+                    playerWins += 1
+                    showWinsTiesLosses()
+                }
+            }
+            else if (computerChoice == 's') {
+                if (keyPressed == 'r') {
+                    alert('You played ' + keyPressed + ' and the computer played ' + computerChoice + " so you won!")
+                    playerWins += 1
+                    showWinsTiesLosses()
+                }
+                else if (keyPressed == 'p') {
+                    alert('You played ' + keyPressed + ' and the computer played ' + computerChoice + " so you lost.")
+                    playerLosses += 1
+                    showWinsTiesLosses()
+                }
+            }
+            else if (computerChoice == 'p') {
+                if (keyPressed == 'r') {
+                    alert('You played ' + keyPressed + ' and the computer played ' + computerChoice + " so you lost.")
+                    playerLosses += 1
+                    showWinsTiesLosses()
+                }
+                else if (keyPressed == 's') {
+                    alert('You played ' + keyPressed + ' and the computer played ' + computerChoice + " so you won!")
+                    playerWins += 1
+                    showWinsTiesLosses()
+                }
+            }
+            else if (computerChoice == keyPressed) {
+                alert('You played ' + keyPressed + ' and the computer played ' + computerChoice + " so you tied.")
+                playerTies += 1
+                showWinsTiesLosses()
+            }
+        }
+    </script>
+</body>
+
+</html>
